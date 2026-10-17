@@ -11,8 +11,7 @@
     <!-- Google Fonts: Playfair Display for rustic elegance, Inter for clean UI -->
     <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">    <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -111,7 +110,7 @@
             <!-- Logo & Title -->
             <div class="flex items-center gap-4 text-center sm:text-left">
                 <div class="w-32 h-32 sm:w-44 sm:h-44 flex items-center justify-center flex-shrink-0">
-                    <img id="headerLogoImg" src="..." alt="Lili Logo" class="w-full h-full object-contain filter drop-shadow-md" onerror="this.src='https://placehold.co/180x180/transparent/8B3A2B?text=Logo'">
+                    <img id="headerLogoImg" src="..." alt="Lili Logo" fetchpriority="high" class="w-full h-full object-contain filter drop-shadow-md" onerror="this.src='https://placehold.co/180x180/transparent/8B3A2B?text=Logo'">
                 </div>
                 <div>
                     <h1 class="font-serif font-black text-2xl sm:text-3xl text-[#8B3A2B] tracking-wide">Las Cazuelas de Lili</h1>
