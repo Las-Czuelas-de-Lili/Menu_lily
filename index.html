@@ -90,7 +90,7 @@
             justify-content: center;
             box-shadow: -4px 4px 10px rgba(139, 58, 43, 0.2);
             cursor: pointer;
-            z-index: -1;
+            z-index: 1;
         }
     </style>
 </head>
@@ -812,12 +812,12 @@ menuDocRef.onSnapshot((doc) => {
                         <div class="flex-grow space-y-1.5 pl-2">
                             <h3 class="font-bold text-stone-800 text-sm sm:text-base leading-tight">${item.name}</h3>
                             <p class="text-xs text-stone-500 line-clamp-2">${item.description}</p>
-                            <div class="flex items-center gap-2 pt-1">
+                            <div class="flex items-center gap-2 flex-wrap pt-1">
                                 <span class="font-black text-[#8B3A2B] text-base">$${item.price}.00</span>
                                 ${item.requiresGuisados || item.requiresAgua || item.requiresChilaquilesOpts || item.requiresRefresco ? '<span class="bg-amber-100 text-amber-900 text-[10px] font-bold px-2 py-0.5 rounded-full border border-amber-300">Personalizable</span>' : ''}
                             </div>
                         </div>
-                        <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-xl overflow-hidden bg-stone-100 flex-shrink-0 border border-[#E7D7C1]">
+                        <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-xl overflow-hidden bg-stone-100 flex-shrink-0 border border-[#E7D7C1]" style="min-width: 96px; min-height: 96px;">
                             <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover cursor-pointer transition transform hover:scale-105" onclick="event.stopPropagation(); openImageZoom('${item.image}', '${item.name}')" title="Haz clic para ver en grande" onerror="this.src='https://placehold.co/120x120/8B3A2B/F4EADB?text=Lili'">
                         </div>
                     `;
@@ -1692,8 +1692,12 @@ function renderAdminMenuEditor() {
 
                 if (distance < 130) {
                     tab.style.transform = 'translateY(-50%) translateX(-100%)';
+                    tab.style.opacity = '1';
+                    tab.style.pointerEvents = 'auto';
                 } else {
                     tab.style.transform = 'translateY(-50%) translateX(0)';
+                    tab.style.opacity = '0';
+                    tab.style.pointerEvents = 'none';
                 }
             });
         });
