@@ -600,8 +600,6 @@ menuDocRef.onSnapshot((doc) => {
         if (document.getElementById('adminModal') && !document.getElementById('adminModal').classList.contains('hidden')) {
             renderAdminContent();
         }
-    } else {
-        menuDocRef.set(DEFAULT_STORE_DATA);
     }
 });
         if (storeData.dailyGuisados && typeof storeData.dailyGuisados[0] === 'string') {
